@@ -1,0 +1,3 @@
+const handleCheked = (event) => {
+  setCheked(event.target.checked);
+};
