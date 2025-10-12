@@ -1,16 +1,15 @@
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
-import ToDOList from "./componentes/toDoList";
+import ItemList from "./componentes/ItemList";
 
 function App() {
-  const [ischeck, setIsCheck] = useState(false);
   const [count, setCount] = useState(0);
   const [additem, setAdditem] = useState({ name: "" });
   const [itemList, setItemList] = useState([]);
+
   const remove = (id) => {
     setItemList(itemList.filter((item) => item.id != id));
   };
-
   const handleClick = () => {
     if (!additem.name || additem.name.trim() === "") return;
     const newId = { id: count };
@@ -27,7 +26,6 @@ function App() {
       task.id === id ? { ...task, completed: !task.completed } : task
     );
     setItemList(updateList);
-    setIsCheck(true);
   };
 
   return (
@@ -43,10 +41,10 @@ function App() {
       </button>
       <div>
         {itemList.map((task) => (
-          <ToDOList
+          <ItemList
+            key={task.id}
             name={task.name}
             remove={() => remove(task.id)}
-            key={task.id}
             completed={task.completed}
             handleCheck={() => handleCheck(task.id)}
           />

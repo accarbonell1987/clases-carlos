@@ -13,15 +13,29 @@ function App() {
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
+  const handleOnChangeStatus = (id) => {
+    const updateList = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updateList);
+  }
+  const handleAddTask = () => {
+    // 
+  };
 
   //TODO: Agregar funcionalidad de agregar tareas
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <h1>Todo List</h1>
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <button style={{ backgroundColor: "blue", color: "white" }} onClick={handleAddTask}>Add Task</button>
+      <div style={{
+        display: "flex", flexDirection: "column", gap: "10px", border: "1px solid #ccc",
+        borderRadius: "5px",
+        padding: "10px",
+      }}>
         {tasks.map((task) => (
-          <ItemList key={task.id} text={task.text} completed={task.completed} />
+          <ItemList key={task.id} id={task.id} text={task.text} completed={task.completed} onDelete={handleDelete} onChangeStatus={handleOnChangeStatus} />
         ))}
       </div>
     </div>

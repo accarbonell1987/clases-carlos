@@ -1,31 +1,28 @@
-import React from "react";
 
 const stlye = {
   display: "flex",
-  justifyContent: "space-between",
+  justifyContent: "flex-start",
   alignItems: "center",
   border: "1px solid #ccc",
   borderRadius: "5px",
   padding: "10px",
+  gap: "8px",
 };
 
-//TODO: Diferenciar entre tareas completadas y no completadas
-// 1. Completadas con color de background gris
-// 2. No completadas con color de background orange
-
-//TODO: Adicionar funcion para modificar el completed
-
 const ItemList = ({
+  id,
   completed = false,
   text = "",
-  onDelete = () => {},
-  handleDone = () => {},
+  onDelete = () => { },
+  onChangeStatus = () => { },
 }) => {
+  const backgroundColor = completed ? "#ff6600" : "#ff2200";
+
   return (
-    <div style={stlye}>
-      <input type="radio" checked={completed} />
+    <div style={{ ...stlye, backgroundColor }}>
+      <input name={id} type="radio" checked={completed} onClick={() => onChangeStatus(id)} />
       <label>{text}</label>
-      <button onClick={onDelete}>Delete</button>
+      <button style={{ marginLeft: "auto" }} onClick={() => onDelete(id)}>Delete</button>
     </div>
   );
 };
