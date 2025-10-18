@@ -1,19 +1,20 @@
-import { useNavigate } from "react-router";
 
-const List = () => {
-  const navigate = useNavigate();
+const List = ({ pokemonList }) => {
+  // const navigate = useNavigate();
 
-  const handleDetailClick = (id) => {
-    navigate(`/pokemon/details/${id}`);
+  // const handleDetailClick = (id) => {
+  //   navigate(`/pokemon/details/${id}`);
+  // }
+
+  if (!pokemonList || pokemonList.length === 0) {
+    return <p>No hay pokémons para mostrar</p>;
   }
 
   return (
     <div>
-      <ul>
-        <li><div>Ditto <button onClick={() => handleDetailClick(1)}>DETALLE</button></div></li>
-        <li><div>Charizzard <button onClick={() => handleDetailClick(100)}>DETALLE</button></div></li>
-        <li><div>Pikachu <button onClick={() => handleDetailClick(200)}>DETALLE</button></div></li>
-      </ul>
+      {pokemonList?.map(p => {
+        return <div key={p.id}>{p.name}</div>
+      })}
     </div>
   )
 }

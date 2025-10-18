@@ -7,7 +7,6 @@ const PokeRoutes = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<PokeList />} />
-      <Route path="/list" element={<PokeList />} />
       <Route path="/pokemon/details/:id" element={<PokeDetails />} />
       <Route path="*" element={<p>RUTA NO EXISTENTE</p>} />
     </Routes>
