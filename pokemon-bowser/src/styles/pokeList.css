@@ -1,0 +1,16 @@
+.btn {
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.poke-ul {
+  gap: 5px;
+  background-color: #e8f0fe; /* azul suave tipo Google */
+  border-radius: 10px;
+  padding: 5px;
+}
+.poke-li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

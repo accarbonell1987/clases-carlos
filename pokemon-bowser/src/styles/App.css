@@ -1,0 +1,23 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff5959, #ffd86f);
+  padding-top: 50px;
+}
+.data-details {
+  display: flex;
+  background-color: rgb(231, 225, 225);
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+  border-color: black;
+  gap: 10px;
+}
+.btn {
+  border-radius: 10px;
+  gap: 10px;
+  margin: 5px;
+  background-color: #ffd86f;
+}

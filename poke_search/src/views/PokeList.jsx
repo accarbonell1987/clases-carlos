@@ -1,7 +1,6 @@
-import { useState } from 'react'
-import List from '../components/List'
-import SearchBar from '../components/SearchBar'
-import '../styles/App.css'
+import PokeDetails from "../../../../pokemon-bowser/src/component/pokeDetails";
+
+import "../styles/App.css";
 
 function PokeList() {
   const [pokemonList, setPokemonList] = useState([])
@@ -12,10 +11,9 @@ function PokeList() {
 
   return (
     <div>
-      <SearchBar handleOnChangePokemonList={handleOnChangePokemonList} />
-      <List pokemonList={pokemonList} />
+      <PokeDetails />
     </div>
-  )
+  );
 }
 
-export default PokeList
+export default PokeList;
