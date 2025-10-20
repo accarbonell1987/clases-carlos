@@ -1,14 +1,14 @@
-import List from '../components/List'
-import SearchBar from '../components/SearchBar'
-import '../styles/App.css'
+import PokeDetails from "../../../../pokemon-bowser/src/component/pokeDetails";
+import List from "../components/List";
+
+import "../styles/App.css";
 
 function PokeList() {
   return (
     <div>
-      <SearchBar />
-      <List />
+      <PokeDetails />
     </div>
-  )
+  );
 }
 
-export default PokeList
+export default PokeList;

@@ -98,7 +98,7 @@ src/
 ```jsx
 // Ejemplo de estructura
 const SearchBar = ({ onSearch, loading }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -115,8 +115,10 @@ const SearchBar = ({ onSearch, loading }) => {
 // services/pokemonAPI.js
 export const searchPokemon = async (name) => {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
-    if (!response.ok) throw new Error('Pokémon no encontrado');
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`
+    );
+    if (!response.ok) throw new Error("Pokémon no encontrado");
     return await response.json();
   } catch (error) {
     throw error;
@@ -155,7 +157,9 @@ export const searchPokemon = async (name) => {
 // Ejemplo de obtención de evoluciones
 const getEvolutionChain = async (pokemonId) => {
   // 1. Obtener especie del Pokémon
-  const species = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`);
+  const species = await fetch(
+    `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`
+  );
   const speciesData = await species.json();
 
   // 2. Obtener cadena evolutiva
@@ -187,17 +191,17 @@ const getEvolutionChain = async (pokemonId) => {
 
 ### Funcionalidades Básicas
 
-- [ ] Configurar proyecto con Vite
-- [ ] Probar endpoints en POSTMAN
-- [ ] Implementar componente SearchBar
-- [ ] Crear servicio de API con fetch
-- [ ] Implementar lista de resultados
-- [ ] Agregar navegación a detalles
+- [x] Configurar proyecto con Vite
+- [x] Probar endpoints en POSTMAN
+- [x] Implementar componente SearchBar
+- [x] Crear servicio de API con fetch
+- [-] Implementar lista de resultados
+- [x] Agregar navegación a detalles
 
 ### Funcionalidades Avanzadas
 
-- [ ] Vista detallada del Pokémon
-- [ ] Mostrar estadísticas y características
+- [x] Vista detallada del Pokémon
+- [x] Mostrar estadísticas y características
 - [ ] Implementar galería de imágenes
 - [ ] Obtener y mostrar evoluciones
 - [ ] Manejo de errores
